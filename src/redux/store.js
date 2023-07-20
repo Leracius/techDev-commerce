@@ -23,7 +23,7 @@ const persistConfig = {
     key: "root",
     //el storage se importa de redux-persist
     storage,
-    whitelist: ['newData', 'user', 'style'],
+    whitelist: ['newData', 'user', 'style']
     // la tercera configuración determina qué reducers deben ser persistidos
 };
 

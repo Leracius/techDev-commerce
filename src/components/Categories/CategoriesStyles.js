@@ -33,6 +33,9 @@ export const StyledMotionDiv = styled(motion.div)`
     justify-content: center;
     align-items: center;
     background-color: #0000003d;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
     p{
         /* color: white; */
         font-weight: 600;

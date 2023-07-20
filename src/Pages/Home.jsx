@@ -1,7 +1,6 @@
 import React from 'react'
 import CardProducts from "../components/Products/CardProducts"
-import Categories from "../components/categories/Categories"
-import Cart from "../components/Cart/Cart"
+import Categories from '../components/Categories/Categories'
 
 const Home = () => {
   return (

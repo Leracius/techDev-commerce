@@ -54,9 +54,6 @@ const Layout = ({children}) => {
             {
               !active && <MenuButton onClick={(e)=>handleClick(e)}><AiOutlineMenu color='white' size={30}/></MenuButton>
             }    
-            {/* <ElemContainer>
-
-            </ElemContainer> */}
         </HeaderStyled>
     </ContainerStyled>
         {children}
