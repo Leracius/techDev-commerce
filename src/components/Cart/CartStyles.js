@@ -48,7 +48,7 @@ export const CartBody = styled.div`
     flex-direction: column;
     align-items: center;
     font-size: 25px;
-    z-index: 3;
+    z-index: 10;
     min-width: 300px;
     @media (max-width: 768px) {
         position: absolute;
