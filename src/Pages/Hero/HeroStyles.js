@@ -6,9 +6,15 @@ export const HeroContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: calc(100vh -40px);
     justify-content: center;
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png');
+      height: 100vh;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
 `
 
@@ -28,5 +34,7 @@ export const StyledMotionDiv = styled(motion.div)`
   width: 100%;
   img{
     width: 90%;
+
+    
   }
 `

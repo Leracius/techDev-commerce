@@ -26,12 +26,13 @@ const Cart = () => {
     dispatch(toggleHiddenCart())
     e.stopPropagation();
   }
+  
 
 
 
   return (
       <Cartcontainer style={currentStyle}>
-        <div>
+        <div onClick={()=>dispatch(toggleHiddenCart())}>
         <QuantityElement>{totalCart}</QuantityElement>
         <HiShoppingBag onClick={(e)=>handleClick(e)} color="white" size={40}/>
         </div>
@@ -46,7 +47,7 @@ const Cart = () => {
                 <>
                 <CartProducts/>
                   <CartButtons>
-                    <NavLinkStyled to={'/checkout'}>iniciar compra</NavLinkStyled>
+                    <button onClick={()=>navigate("/checkout")} >Iniciar compra</button>
                     <div>
                       <h1>subtotal: {formatPrice(totalPrice)}</h1>
                       <h1>envío: {formatPrice(shippingCost)}</h1>

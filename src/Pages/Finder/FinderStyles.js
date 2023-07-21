@@ -2,17 +2,29 @@ import { styled } from "styled-components";
 import { motion } from 'framer-motion';
 
 export const FormContainer = styled.form`
-    padding: 10px 0 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 60px);
+    @media (max-width: 768px) {
+      background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png');
+      height: 100vh;
+      background-size: contain;
+      background-repeat: no-repeat;
+      align-items: start;
+      margin-top: 120px;
+    }
 `
 
 export const InputContainer = styled.div`
     display: flex;
     position: absolute;
+    @media (max-width: 768px) {
+      top: 90px;
+    }
+    
+    
 `
 
 export const InputStyled = styled.input`
@@ -28,7 +40,6 @@ export const InputStyled = styled.input`
     font-family: 'Space Grotesk', sans-serif;
 
     @media (max-width: 768px) {
-    /* Estilos con media queries para pantallas de hasta 768px */
     width: 100%;
     }
     &:focus{

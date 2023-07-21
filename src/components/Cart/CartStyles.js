@@ -52,11 +52,13 @@ export const CartBody = styled.div`
     min-width: 300px;
     @media (max-width: 768px) {
         position: absolute;
+        bottom: -10px;
         right: -20px;
         width: 100vw;
-        height: 85vh;
+        height: 90vh;
         border: none;
-        padding: 10px;
+        padding-top: 30px;
+        background-color: #282d38;
 
         h1{
             margin: 10px;
@@ -97,7 +99,9 @@ export const CartTitle = styled.div`
     justify-content: space-between;
     align-items: center;
     color: white;
-
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 `
 
 export const CartButtons = styled.div`

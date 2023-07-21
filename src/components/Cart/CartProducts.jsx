@@ -45,13 +45,14 @@ const CartProducts = () => {
 
 export const CartContainer = styled.div`
   width: 360px;
+  padding: 10px;
   height: 70%;
   align-items: center;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%;
   }
   &::-webkit-scrollbar {
         background-color: black;;
@@ -74,6 +75,7 @@ export const CartProduct = styled.div`
     padding: 10px;
     @media (max-width: 768px) {
       width: 90%;
+      border: 2px solid white;
   }
 
 `

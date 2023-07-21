@@ -20,6 +20,7 @@ const ButtonColor = styled.button`
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
+  
   &:hover {
     color: white;
   }

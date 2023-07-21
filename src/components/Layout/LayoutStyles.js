@@ -57,7 +57,9 @@ export const HeaderStyled = styled.header`
     align-items: center;
     height: 40px;
     background-color: #0000005f;
-    
+    @media (max-width: 768px) {
+        height: 50px;
+    }
 `
 
 export const FooterStyled = styled.footer`

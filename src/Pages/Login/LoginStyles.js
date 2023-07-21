@@ -1,20 +1,16 @@
 import { styled } from "styled-components";
 
 export const LoginContainer = styled.div`
-    height: 30rem;
     width: 100vw;
-
+    /* height: 100vh; */
     color: black;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
     @media (max-width: 768px) {
-    /* Estilos con media queries para pantallas de hasta 768px */
-      width: 100%;
-      padding: 0;
     }
     @keyframes myAnim {
 	0% {
@@ -42,6 +38,7 @@ export const LoginContainer = styled.div`
 	}
 }
     h1{
+      margin-top: 60px;
       color: white;
       animation: myAnim 2s ease 0s normal forwards;
     }
