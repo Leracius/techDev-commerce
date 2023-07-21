@@ -38,13 +38,13 @@ const Layout = ({children}) => {
               active && 
               <MenuBurguer style={currentStyle}>
 
-              <NavlinkStyled to='/' style={({ isActive }) => ({ color: isActive ? 'white' : '#0000003d' })}>inicio</NavlinkStyled >
-                <NavlinkStyled to='/home' style={({ isActive }) => ({ color: isActive ? 'white' : '#0000003d' })}>buscar</NavlinkStyled >
+              <NavlinkStyled to='/' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>inicio</NavlinkStyled >
+                <NavlinkStyled to='/home' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>buscar</NavlinkStyled >
                 { isAuth ? 
-                <NavlinkStyled onClick={()=> dispatch(clearCurrentUser())} to='/login' style={({ isActive }) => ({ color: isActive ? 'white' : '#0000003d' })}>Log out</NavlinkStyled>
-                : <NavlinkStyled to='/login' style={({ isActive }) => ({ color: isActive ? 'white' : '#0000003d' })}>login</NavlinkStyled>
+                <NavlinkStyled onClick={()=> dispatch(clearCurrentUser())} to='/login' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>Log out</NavlinkStyled>
+                : <NavlinkStyled to='/login' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>login</NavlinkStyled>
                 }
-                 <NavlinkStyled to='/buy' style={({ isActive }) => ({ color: isActive ? 'white' : '#0000003d' })}>comprar</NavlinkStyled >
+                 <NavlinkStyled to='/buy' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>comprar</NavlinkStyled >
                  {/* <MenuButton onClick={(e)=>handleClick(e)}><AiOutlineMenu color='white' size={40}/></MenuButton> */}
                  <MenuButton onClick={(e)=>handleClick(e)}><BsFillArrowUpRightCircleFill color='white' size={30}/></MenuButton>
 
@@ -67,9 +67,11 @@ const NavlinkStyled = styled(NavLink)`
   margin: 10px;
   font-weight: 900;
   padding: 5px;
+  color: white;
+  border-radius: 10px;
   &:hover{
     scale: 1.1;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); */
   }
 `
 

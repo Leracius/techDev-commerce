@@ -8,6 +8,7 @@ export const CheckoutContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     height: auto;
+    width: 100%;
   }
 `
 export const SidesContainer = styled.div`

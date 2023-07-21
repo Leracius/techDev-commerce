@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 
 export const Cartcontainer = styled.div`
     position: fixed;
-    bottom: 20px;
+    bottom: 60px;
     right: 20px;
     margin: 10px;
     display: flex;
