@@ -14,8 +14,8 @@ const ButtonColor = styled.button`
   border: none;
   color: gray ;
   position: fixed;
-  bottom: 60px;
-  left: 10px;
+  bottom: 20px;
+  right: 20px;
   background-color: black;
   border-radius: 5px;
   padding: 10px;

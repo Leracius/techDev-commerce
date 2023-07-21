@@ -12,7 +12,6 @@ export const HeroContainer = styled.div`
       background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png');
       height: 100vh;
       background-size: contain;
-      background-position: center;
       background-repeat: no-repeat;
     }
 
