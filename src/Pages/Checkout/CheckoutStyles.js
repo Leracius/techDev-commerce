@@ -5,6 +5,10 @@ export const CheckoutContainer = styled.div`
   width: 100vw;
   height: 100vh;
   justify-content: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+  }
 `
 export const SidesContainer = styled.div`
     border-radius: 30px;
@@ -15,6 +19,10 @@ export const SidesContainer = styled.div`
     flex-direction: column;
     width: 360px;
     height: 450px;
+    @media (max-width: 768px) {
+    margin: 0;
+    border-radius: 0;
+    }
     h1{
         font-size: 20px;
         margin: 10px;

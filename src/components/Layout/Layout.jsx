@@ -15,7 +15,7 @@ const Layout = ({children}) => {
   const currentStyleIndex = useSelector((state) => state.style);
   const currentStyle = styles[currentStyleIndex];
 
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(false)
 
   const handleClick = (e) =>{
     e.preventDefault()

@@ -13,9 +13,6 @@ const Checkout = () => {
 
   return (
     <CheckoutContainer>
-        <SidesContainer>
-          <FormCheck/>
-        </SidesContainer>
         < StyledCheck>
             <CartTitle>
                 <h1>Tu pedido</h1>
@@ -38,6 +35,9 @@ const Checkout = () => {
       )
     }
         </ StyledCheck>
+        <SidesContainer>
+          <FormCheck/>
+        </SidesContainer>
     </CheckoutContainer>
   )
 }

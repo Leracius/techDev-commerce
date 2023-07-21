@@ -22,7 +22,7 @@ export const MenuBurguer = styled.div`
         right: 0;
         width: 100%;
         z-index: 10;
-        padding-bottom: 50px;
+        /* padding-bottom: 50px; */
         justify-content: center;
         align-items: center;
         padding: 0;
@@ -36,9 +36,6 @@ export const MenuBurguer = styled.div`
 
 export const ElemContainer = styled.div`
     display: flex;
-    
-
-
     margin: 10px;
     h1{
         font-size: 25px;
