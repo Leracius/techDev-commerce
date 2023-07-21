@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const CheckoutContainer = styled.div`
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px) ;
   justify-content: center;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -20,8 +20,8 @@ export const SidesContainer = styled.div`
     width: 360px;
     height: 450px;
     @media (max-width: 768px) {
-    margin: 0;
-    border-radius: 0;
+      margin: 0;
+      border-radius: 0;
     }
     h1{
         font-size: 20px;

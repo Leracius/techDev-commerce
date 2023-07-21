@@ -22,9 +22,9 @@ const Cart = () => {
   const totalCart = cartItems.reduce((total, item) => total += item.quantity, 0)
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
 
-  const handleClick = (e) =>{
+  const handleClick = () =>{
     dispatch(toggleHiddenCart())
-    e.stopPropagation();
+    navigate("/checkout")
   }
   
 
@@ -34,7 +34,7 @@ const Cart = () => {
       <Cartcontainer style={currentStyle}>
         <div onClick={()=>dispatch(toggleHiddenCart())}>
         <QuantityElement>{totalCart}</QuantityElement>
-        <HiShoppingBag onClick={(e)=>handleClick(e)} color="white" size={40}/>
+        <HiShoppingBag color="white" size={40}/>
         </div>
           <CartBody style={{ transform: hiddenCart ? "translateY(0%) ": "translateY(-200%)"}}>
             <CartTitle>
@@ -47,7 +47,7 @@ const Cart = () => {
                 <>
                 <CartProducts/>
                   <CartButtons>
-                    <button onClick={()=>navigate("/checkout")} >Iniciar compra</button>
+                  <button type='button' onClick={()=>handleClick()}>Iniciar compra</button>
                     <div>
                       <h1>subtotal: {formatPrice(totalPrice)}</h1>
                       <h1>envío: {formatPrice(shippingCost)}</h1>

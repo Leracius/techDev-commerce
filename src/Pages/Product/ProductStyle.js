@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
 export const ContainerStyled = styled.div`
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #0000003d;
-    height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     gap: 40px;
+    padding-top: 100px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
     img{
         border-radius: 20px;
     }
