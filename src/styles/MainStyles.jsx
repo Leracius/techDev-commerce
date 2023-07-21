@@ -5,7 +5,6 @@ import { styles } from '../colors/styleArray';
 import { setStyleIndex } from '../redux/configs/styleSlice';
 
 const MainContainer = styled.main`
-  height: 100%;
   background-repeat: repeat;
   padding-bottom: 40px;
 `;

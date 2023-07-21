@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export const GlobalStyle = createGlobalStyle` 
-
 *{ 
     margin: 0;
     padding: 0;
@@ -11,8 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 }
 body {
     overflow-x: hidden;
-    width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;

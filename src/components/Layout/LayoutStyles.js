@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ContainerStyled = styled.form`
-    width: 100%;
+    /* width: 100%; */
 `
 export const StyledImg = styled.img`
     height: 20px;
@@ -16,14 +16,16 @@ export const MenuBurguer = styled.div`
     border-radius: 20px;
     border: 2px solid white;
     @media (max-width: 768px) {
-        position: fixed;
+        position: absolute;
         background-color: gray;
         top: 0;
+        right: 0;
         width: 100%;
         z-index: 10;
         padding-bottom: 50px;
         justify-content: center;
         align-items: center;
+        padding: 0;
         margin: 0;
         border: none;
         padding: 10px 0 10px 0;
@@ -52,7 +54,6 @@ export const ElemContainer = styled.div`
     }
 `
 export const HeaderStyled = styled.header`
-    width: 100vw;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -65,8 +66,6 @@ export const HeaderStyled = styled.header`
 export const FooterStyled = styled.footer`
     height: 100px;
     width: 100%;
-
-
 `
 export const FormContainer = styled.form`
     padding: 10px 0 10px 0;

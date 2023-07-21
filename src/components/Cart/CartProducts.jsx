@@ -1,5 +1,4 @@
 import React  from 'react'
-import { useState } from 'react';
 import { styled } from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart } from '../../redux/selected/DataSlice';

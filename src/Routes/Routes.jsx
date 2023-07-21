@@ -7,9 +7,7 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Login/Register';
 import Hero from '../Pages/Hero/Hero';
 import Finder from '../Pages/Finder/Finder';
-import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
 import { useSelector, useDispatch } from 'react-redux';
-import { clearCurrentUser } from '../redux/user/userSlice';
 import Product from '../Pages/Product/Product';
 
 
