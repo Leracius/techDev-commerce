@@ -46,6 +46,9 @@ export const CartContainer = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
+  @media (max-width: 768px) {
+      width: 100%;
+    }
   &::-webkit-scrollbar {
         background-color: transparent;
         width: 10px;
