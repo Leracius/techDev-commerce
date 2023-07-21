@@ -18,7 +18,6 @@ export const Cartcontainer = styled.div`
       border: none;
       bottom: 60px;
   }
-
     cursor: pointer;
     p{
         color: white;
@@ -41,7 +40,7 @@ export const CartBody = styled.div`
     background-color: black;
     height: 90vh;
     position: absolute;
-    bottom: -30px;
+    bottom: -70px;
     right: -30px;
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
     display: flex;
@@ -95,7 +94,7 @@ export const QuantityElement = styled.div`
 export const CartTitle = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: white;
     @media (max-width: 768px) {

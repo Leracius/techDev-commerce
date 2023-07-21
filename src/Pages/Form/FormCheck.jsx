@@ -20,7 +20,7 @@ const FormCheck = () => {
     <Container>
         
         <form onSubmit={formik.handleSubmit}>
-        <h2>Inrega tus datos</h2>
+        <p>Inrega tus datos</p>
         <div>
           <InputStyled
             type="text"

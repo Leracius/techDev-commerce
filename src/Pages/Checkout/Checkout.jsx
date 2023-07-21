@@ -15,7 +15,7 @@ const Checkout = () => {
     <CheckoutContainer>
         < StyledCheck>
             <CartTitle>
-                <h1>Tu pedido</h1>
+                <p>Tu pedido</p>
             </CartTitle>
             {
                 cartItems.length? (
@@ -31,7 +31,7 @@ const Checkout = () => {
                 </CartButtons>
             </>
         ) : (
-        <h1>No hay productos en el carrito</h1>
+        <p>No hay productos en el carrito</p>
       )
     }
         </ StyledCheck>

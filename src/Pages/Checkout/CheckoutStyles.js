@@ -5,10 +5,16 @@ export const CheckoutContainer = styled.div`
   width: 100vw;
   height: calc(100vh - 100px) ;
   justify-content: center;
+  p{
+    font-size: 20px;
+    margin: 5px;
+    color: white;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     height: auto;
     width: 100%;
+    background-color: #282d38;
   }
 `
 export const SidesContainer = styled.div`
@@ -20,22 +26,17 @@ export const SidesContainer = styled.div`
     flex-direction: column;
     width: 360px;
     height: 450px;
-    @media (max-width: 768px) {
-      margin: 0;
-      border-radius: 0;
-    }
-    h1{
-        font-size: 20px;
-        margin: 10px;
-        color: white ;
-    }
     h2{
         font-size: 15px;
         color: white;
     }
+    @media (max-width: 768px) {
+      margin: 0;
+      border-radius: 0;
+    }
 `
 export const StyledCheck = styled(SidesContainer)`
-  /* box-shadow: 3px 1px 49px -20px #6667ab; */
+  text-align: center;
 `
 
 export const CartContainer = styled.div`
