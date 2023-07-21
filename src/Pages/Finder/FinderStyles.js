@@ -20,6 +20,7 @@ export const FormContainer = styled.form`
 export const InputContainer = styled.div`
     display: flex;
     position: absolute;
+    top: 40%;
     @media (max-width: 768px) {
       top: 90px;
     }

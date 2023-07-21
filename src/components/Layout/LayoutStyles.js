@@ -102,4 +102,5 @@ export const ButtonStyled = styled.button`
 export const MenuButton = styled.button`
     border: none;
     background-color: transparent;
+    cursor: pointer;
 `
