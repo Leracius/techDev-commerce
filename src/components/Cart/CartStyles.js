@@ -55,9 +55,8 @@ export const CartBody = styled.div`
         bottom: -10px;
         right: -20px;
         width: 100vw;
-        height: 90vh;
+        height: 85vh;
         border: none;
-        padding-top: 30px;
         background-color: #282d38;
 
         h1{
