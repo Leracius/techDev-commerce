@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const LoginContainer = styled.div`
     width: 100vw;
-    /* height: 100vh; */
+    height: 100vh;
     color: black;
     display: flex;
     justify-content: start;
@@ -11,6 +11,7 @@ export const LoginContainer = styled.div`
     flex-direction: column;
     overflow: hidden;
     @media (max-width: 768px) {
+      height: 100vh;
     }
     @keyframes myAnim {
 	0% {
