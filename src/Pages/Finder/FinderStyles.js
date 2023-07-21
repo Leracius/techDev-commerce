@@ -6,7 +6,8 @@ export const FormContainer = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 100vw;
+    height: 100vh;
 `
 
 export const InputContainer = styled.div`
@@ -53,7 +54,6 @@ export const StyledMotionDiv = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   img{
     width: 80%;
   }

@@ -8,7 +8,7 @@ import {
 const SHIPPING_COST = 500
 
 const INITIAL_STATE = {
-  hidden: true,
+  hidden: false,
   cartItems: [],
   shippingCost: 0,
 };
@@ -51,22 +51,3 @@ export const { addToCart, clearCart, removeFromCart, toggleHiddenCart } =
   cartSlice.actions;
 
 export default cartSlice.reducer;
-
-// REDUCERS ANTERIORES:
-// deleteProd: (state, action) => {
-//   const productToDelete = state.data.find((product) => product.name === action.payload.name);
-//   if (productToDelete.quantity === 0) {
-//     state.data = state.data.filter((product) => product.name !== action.payload.name);
-//   } else {
-//     // Aquí puedes manejar la lógica de disminuir la cantidad en caso de que sea más de 0
-//     // Por ejemplo, state.data.find((product) => product.name === action.payload.name).quantity--;
-//   }
-// },
-//     setData: (state, action) => {
-//       state.data.push(action.payload);
-//     },
-//     deleteData: (state) => {
-//       state.data = []; // Asignar un nuevo array vacío al estado
-//     },
-//   },
-// });
