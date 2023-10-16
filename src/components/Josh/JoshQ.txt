@@ -1,0 +1,26 @@
+import React, { useEffect } from 'react';
+
+const JoshBubble = ({ message, bottom, time, right }) => {
+  useEffect(() => {
+    const JOSH = document.querySelector(".josh-message");
+    const BUBBLEJOSH = document.querySelector(".message-bubble");
+
+    const alertJosh = (message, bottom, time, right) => {
+      JOSH.style.display = "flex";
+      JOSH.style.bottom = bottom;
+      JOSH.style.right = right;
+      JOSH.style.animation = "scaleAnim 0.2s linear 0s 1 normal none";
+      BUBBLEJOSH.innerHTML = message;
+      if (!time == 0)
+        setTimeout(() => {
+          JOSH.style.display = "none";
+        }, time);
+    };
+
+    alertJosh(message, bottom, time, right);
+  }, [message, bottom, time, right]);
+
+  return null;
+};
+
+export default JoshBubble;

@@ -2,14 +2,13 @@ import { styled } from "styled-components";
 
 export const LoginContainer = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 600px;
     color: black;
     display: flex;
     justify-content: start;
     gap: 10px;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
     @media (max-width: 768px) {
       height: 100vh;
     }

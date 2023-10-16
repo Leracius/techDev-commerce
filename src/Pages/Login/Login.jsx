@@ -1,30 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import { LoginContainer, InputStyled } from './LoginStyles';
 import { loginValidationSchema } from '../../Formik/validationSchema';
 import { useNavigate } from 'react-router-dom';
 import { loginInitialValues } from '../../Formik/initialValues';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/userSlice';
+import { loginUser } from '../../axios/user';
+import useRedirect from "../../hooks/useRedirect"
 
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isAuth = useSelector((state) => state.user.isAuth);
-
-  useEffect(()=>{
-    if(isAuth){
-      navigate("/home")
-    }
-  },[])
+  useRedirect('/')
 
   const formik = useFormik({
     initialValues: loginInitialValues,
     validationSchema: loginValidationSchema,
-    onSubmit: (values) => {
-      dispatch(setCurrentUser(values))
-      formik.resetForm();
+    onSubmit: async (values) => {
+      const {email, password} = values
+      const response = await loginUser(email, password)
+      if(response.user){
+        dispatch(setCurrentUser(response.user))
+        formik.resetForm();
+        navigate("/home")
+        return
+      }else{
+        alert("Has ingresado mal alguno de los datos")
+      }
+
     },
   });
 

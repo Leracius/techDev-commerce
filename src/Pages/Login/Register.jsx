@@ -6,21 +6,27 @@ import { useNavigate } from 'react-router-dom';
 import { registerInitialValues } from '../../Formik/initialValues';
 import { setCurrentUser } from '../../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { createUser } from '../../axios/user';
 
 
 const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const isAuth = useSelector((state) => state.user.isAuth);
+  const userCurrent = useSelector((state) => state.user.currentUser);
 
   const formik = useFormik({
     initialValues: registerInitialValues,
     validationSchema: registerValidationSchema,
-    onSubmit: (values) => {
-      dispatch(setCurrentUser(values))
-      navigate('/')
-      formik.resetForm();
+    onSubmit: async (values, actions) => {
+      const {name, surname, email, password} = values
+      const user = await createUser(name, surname, email, password)
+      if(user){
+        navigate('/login')
+        actions.resetForm()
+        return
+      }
+      alert("El email ya esta registrado")
+      
     },
   });
 
@@ -40,6 +46,20 @@ const Register = () => {
           />
           {formik.touched.name && formik.errors.name && (
             <h1>{formik.errors.name}</h1>
+          )}
+        </div>
+        <div>
+          <InputStyled
+            type="text"
+            id="surname"
+            name="surname"
+            placeholder="Apellido"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.surname}
+          />
+          {formik.touched.surname && formik.errors.surname && (
+            <h1>{formik.errors.surname}</h1>
           )}
         </div>
         <div>

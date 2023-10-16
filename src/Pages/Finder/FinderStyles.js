@@ -6,7 +6,7 @@ export const FormContainer = styled.form`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: calc(100vh - 100px) ;
+    height: 600px;
     @media (max-width: 768px) {
       background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png');
       height: 100vh;

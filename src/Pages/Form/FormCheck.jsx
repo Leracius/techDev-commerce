@@ -7,6 +7,8 @@ import { InputStyled } from '../Login/LoginStyles';
 
 const FormCheck = () => {
 
+
+
   const formik = useFormik({
     initialValues: checkoutInitialValues,
     validationSchema: checkoutValidationSchema,
@@ -54,7 +56,7 @@ const FormCheck = () => {
             type="location"
             id="location"
             name="location"
-            placeholder="Contraseña"
+            placeholder="Ciudad"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.location}
