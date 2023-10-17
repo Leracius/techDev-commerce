@@ -32,8 +32,6 @@ export const StyledMotionDiv = styled(motion.div)`
   justify-content: center;
   width: 100%;
   img{
-    width: 90%;
-
-    
+    width: 80%;
   }
 `

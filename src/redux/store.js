@@ -8,6 +8,7 @@ import productReducer from  './products/productSlice'
 import cartReducer from './selected/DataSlice'
 import userReducer from './user/userSlice'
 import styleReducer from './configs/styleSlice'
+import ordersReducer from './orders/orderSlice'
 
 //Todo lo que se almacene aquí perdura en el local Storage
 const reducers = combineReducers({
@@ -16,6 +17,7 @@ const reducers = combineReducers({
     newData: cartReducer,
     user: userReducer,
     style: styleReducer,
+    orders: ordersReducer
 })
 
 //el persistConfig no se importa porque su nombre se crea por convención

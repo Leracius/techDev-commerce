@@ -3,7 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import { HeroContainer, StyledMotionDiv, TittleStyled } from './HeroStyles'
 import { useSelector } from 'react-redux';
 
-const Hero = ({children}) => {
+const Hero = () => {
 
   const {currentUser} = useSelector(state=> state.user)
 
@@ -16,8 +16,6 @@ const Hero = ({children}) => {
           <TittleStyled >Bienvenido a tech.Dev {currentUser? currentUser.name : ""} </TittleStyled >         
         </StyledMotionDiv>
       </AnimatePresence>
-      {children}
-    
     </HeroContainer>
   </>
   )

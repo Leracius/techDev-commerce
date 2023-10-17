@@ -8,7 +8,8 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 body {
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;

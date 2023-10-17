@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
-export const ContainerStyled = styled.form`
+export const ContainerStyled = styled.div`
+    /* width: 100vw; */
     /* width: 100%; */
 `
 export const StyledImg = styled.img`

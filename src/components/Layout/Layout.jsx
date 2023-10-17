@@ -39,6 +39,7 @@ const Layout = ({children}) => {
             {
               active && 
               <MenuBurguer style={currentStyle}>
+                
 
                 <NavlinkStyled to='/' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
                   inicio

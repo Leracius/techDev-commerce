@@ -6,6 +6,7 @@ import { setStyleIndex } from '../redux/configs/styleSlice';
 
 const MainContainer = styled.main`
   background-repeat: repeat;
+  /* width: 100vw; */
   padding-bottom: 40px;
 `;
 

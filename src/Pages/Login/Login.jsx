@@ -22,7 +22,10 @@ const Login = () => {
       const {email, password} = values
       const response = await loginUser(email, password)
       if(response.user){
-        dispatch(setCurrentUser(response.user))
+        dispatch(setCurrentUser({
+          ...response.user,
+          token: response.token
+        }))
         formik.resetForm();
         navigate("/home")
         return
