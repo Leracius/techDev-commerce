@@ -12,12 +12,6 @@ export const CardContainer = styled.div`
         border-radius: 10px;
         opacity: 0.8;
     }
-    button{
-        &:hover{
-        background-color: black;
-        scale: 1.1;
-    }
-    }
     p{
         color: white;
         margin-top: 10px;
@@ -34,6 +28,9 @@ export const ButtonContainer = styled.div`
         font-size: 16px;
         cursor: pointer;
         border-radius: 10px;
+    }:hover{
+        background-color: black;
+        scale: 1.1;
     }
 `
 export const PStyled = styled.p`

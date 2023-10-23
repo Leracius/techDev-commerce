@@ -10,6 +10,8 @@ import Finder from '../Pages/Finder/Finder';
 import { useSelector, useDispatch } from 'react-redux';
 import Product from '../Pages/Product/Product';
 import {ProtectRoute , DisprotectRoute} from '../components/ProtectedRoute/ProtectRoute';
+import UserMenu from '../components/UserMenu/UserMenu';
+import Orders from '../components/Orders/Orders';
 
 
 const Routes = () => {
@@ -18,6 +20,7 @@ const Routes = () => {
     <BrowserRouter>
         <Layout>
             <ReactDomRoutes>
+
                 <Route path='/'element={<Hero/>} />
                 <Route path='/home'element={<Finder/>} />           
                 <Route path='/buy'>
@@ -40,6 +43,12 @@ const Routes = () => {
                     </ProtectRoute>
                   }/>
                 <Route path='/register' element={<Register/>} />
+                <Route path='/user'>
+                  <Route index element={<UserMenu/>} />
+                  <Route path=':user' element={<h1>holis</h1>} />
+                  {/* <Route path=':user/orders' element={<Orders/>}/> */}
+                </Route>
+                <Route path='/orders' element={<Orders/>}/>
             </ReactDomRoutes>
 
         </Layout>

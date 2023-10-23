@@ -2,6 +2,7 @@ import React from 'react'
 import { AnimatePresence } from 'framer-motion';
 import { HeroContainer, StyledMotionDiv, TittleStyled } from './HeroStyles'
 import { useSelector } from 'react-redux';
+import Josh from '../../components/Josh/Josh';
 
 const Hero = () => {
 
@@ -9,6 +10,7 @@ const Hero = () => {
 
   return (<>
       <HeroContainer>
+      <Josh message="Bienvenido a tech.Dev" active={true} displayTime={3000} /> 
       <AnimatePresence>
         <StyledMotionDiv
             animate={{ y: [-10, 10, -10], transition: { duration: 5, repeat: Infinity, repeatType: 'reverse' } }}>

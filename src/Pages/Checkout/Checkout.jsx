@@ -5,14 +5,21 @@ import { formatPrice } from '../../utils/FormatPrice';
 import { CheckoutContainer, SidesContainer,  StyledCheck } from './CheckoutStyles';
 import FormCheck from '../Form/FormCheck';
 import SimplyCard from './SimplyCard'
+import Josh from '../../components/Josh/Josh';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
     const {cartItems, shippingCost} = useSelector(state => state.newData)
     const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    const navigate = useNavigate()
 
+    if(cartItems == []){
+      navigate("/buy")
+    }
 
   return (
     <CheckoutContainer>
+      <Josh message="Aqui es importante que revises tus datos" active={true} displayTime={3000} /> 
         < StyledCheck>
             <CartTitle>
                 <p>Tu pedido</p>

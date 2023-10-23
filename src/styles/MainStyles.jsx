@@ -10,7 +10,7 @@ const MainContainer = styled.main`
   padding-bottom: 40px;
 `;
 
-const ButtonColor = styled.button`
+export const ButtonColor = styled.button`
   background-color: transparent;
   border: none;
   color: gray ;
@@ -39,9 +39,11 @@ const MainStyles = ({ children }) => {
   };
 
   return (
-    <MainContainer style={currentStyle}>
+    <MainContainer 
+    // style={currentStyle}
+    >
       {children}
-      <ButtonColor onClick={handleButtonClick} >Cambiar color</ButtonColor>
+      {/* <ButtonColor onClick={handleButtonClick} >Cambiar color</ButtonColor> */}
     </MainContainer>
   );
 };

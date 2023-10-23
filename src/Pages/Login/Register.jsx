@@ -7,7 +7,7 @@ import { registerInitialValues } from '../../Formik/initialValues';
 import { setCurrentUser } from '../../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../../axios/user';
-
+import Josh from '../../components/Josh/Josh';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -32,6 +32,7 @@ const Register = () => {
 
   return (
     <LoginContainer>
+      <Josh message="O puedes crearte una nueva!" active={true} displayTime={5000} />
       <h1>Crea tu cuenta</h1>
       <form onSubmit={formik.handleSubmit}>
         <div>

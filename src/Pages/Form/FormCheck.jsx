@@ -4,16 +4,41 @@ import { Container } from './FormStyles';
 import { checkoutInitialValues } from '../../Formik/initialValues';
 import { checkoutValidationSchema } from "../../Formik/validationSchema";
 import { InputStyled } from '../Login/LoginStyles';
+import { useSelector, useDispatch } from 'react-redux';
+import { createOrder } from '../../axios/order';
+import { useNavigate } from 'react-router-dom';
+import { clearCart } from '../../redux/selected/DataSlice';
 
 const FormCheck = () => {
 
-
+  const {cartItems, shippingCost} = useSelector(state => state.newData)
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+  const dispatch = useDispatch()
+  const {currentUser} = useSelector((state) => state.user);
+  const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: checkoutInitialValues,
     validationSchema: checkoutValidationSchema,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async(values) => {
+      const orderData = {
+        price: totalPrice,
+        shippingCost: shippingCost,
+        total: totalPrice + shippingCost,
+        shippingDetails:{
+          ...values
+        },
+        items: cartItems
+      }
+
+      try {
+        await createOrder(orderData, dispatch, currentUser);
+        navigate("/home")
+        dispatch(clearCart())
+      } catch (error) {
+        alert("Error al enviar la orden")
+      }
+      console.log(orderData);
       formik.resetForm();
     },
   });
@@ -42,7 +67,7 @@ const FormCheck = () => {
             type="cellphone"
             id="cellphone"
             name="cellphone"
-            placeholder="TNumero de celular"
+            placeholder="Numero de celular"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.cellphone}

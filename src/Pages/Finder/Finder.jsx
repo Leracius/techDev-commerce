@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { selectCategory } from '../../redux/categories/categoriesSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import { AnimatePresence } from 'framer-motion';
+import Josh from '../../components/Josh/Josh';
 
 
 const Finder = () => {
@@ -37,6 +38,7 @@ const Finder = () => {
 
   return (
     <FormContainer>
+      <Josh message="Aqui puedes buscar por categorias" active={true} displayTime={5000} />
         <AnimatePresence>
             <StyledMotionDiv
                 animate={{ y: [-10, 10, -10], transition: { duration: 5, repeat: Infinity, repeatType: 'reverse' } }}>

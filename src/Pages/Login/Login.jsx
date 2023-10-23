@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { setCurrentUser } from '../../redux/user/userSlice';
 import { loginUser } from '../../axios/user';
 import useRedirect from "../../hooks/useRedirect"
+import Josh from '../../components/Josh/Josh';
 
 
 const Login = () => {
@@ -38,7 +39,7 @@ const Login = () => {
 
   return (
     <LoginContainer>
-
+      <Josh message="Intenta iniciar sesión si ya tienes cuenta" active={true} displayTime={5000} />
       <h1>Ingresá a tu cuenta</h1>
       <form onSubmit={formik.handleSubmit}>
         <div>

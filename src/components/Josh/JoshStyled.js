@@ -5,7 +5,7 @@ export const JoshMessage = styled.div`
     position: fixed;
     z-index: 10;
     bottom: 0;
-    border-radius: 10px;
+    left: 50px;
     padding: 10px 10px 0 10px;
     display: flex;
     align-items: center;
@@ -14,6 +14,9 @@ export const JoshMessage = styled.div`
 `
 export const MessageBubble = styled.div`
     color: black;
+    position: absolute;
+    top: -50px; 
+    margin-bottom: 40px; 
     background-color: white;
     text-align: center;
     padding: 10px;
@@ -32,6 +35,7 @@ export const MessageBubble = styled.div`
     }
 `
 export const TalkJosh = styled.div`
+    
     background-size: cover;
     background-repeat: no-repeat;
     width: 200px;

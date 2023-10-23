@@ -27,7 +27,6 @@ const Layout = ({children}) => {
     <>
     <ContainerStyled>
         <HeaderStyled>
-            <Josh message={"holis"} active={true}></Josh> 
             {/* <Alert sx={{position: 'fixed', left: '50%', transform: 'translate(-50%, -50%)', top: '40px'}} severity="error">This is an error alert — check it out!</Alert> */}
             <ElemContainer>
               <img width='150px' src="https://res.cloudinary.com/dbo7lbynt/image/upload/v1689664836/assets-integrador/integrador-assets/logo-final_gh8mub.png" alt="" />
@@ -49,14 +48,14 @@ const Layout = ({children}) => {
                 </NavlinkStyled >
                 
                 { currentUser ? 
-                <NavlinkStyled onClick={()=>{
-                  const result = confirm("Estas seguro?")
-                  if(result){
-                    dispatch(clearCurrentUser())
-                  }
-                  
-                }} style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
-                  log out
+                <NavlinkStyled to="/user" 
+                // onClick={()=>{
+                //   const result = confirm("Estas seguro?")
+                //   if(result){
+                //     dispatch(clearCurrentUser())
+                //   }}} 
+                style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
+                  {currentUser.name}
                 </NavlinkStyled>
                 : <NavlinkStyled to='/login' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
                   login
