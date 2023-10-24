@@ -14,9 +14,9 @@ const Layout = ({children}) => {
   const dispatch = useDispatch()
   const {currentUser} = useSelector((state) => state.user);
   const currentStyleIndex = useSelector((state) => state.style);
-  const currentStyle = styles[currentStyleIndex];
+  // const currentStyle = styles[currentStyleIndex];
 
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   const handleClick = (e) =>{
     e.preventDefault()
@@ -37,7 +37,7 @@ const Layout = ({children}) => {
 
             {
               active && 
-              <MenuBurguer style={currentStyle}>
+              <MenuBurguer>
                 
 
                 <NavlinkStyled to='/' style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
@@ -49,11 +49,6 @@ const Layout = ({children}) => {
                 
                 { currentUser ? 
                 <NavlinkStyled to="/user" 
-                // onClick={()=>{
-                //   const result = confirm("Estas seguro?")
-                //   if(result){
-                //     dispatch(clearCurrentUser())
-                //   }}} 
                 style={({ isActive }) => ({ boxShadow: isActive ? '2px 2px 2px rgba(0, 0, 0, 0.2)' : 'none' })}>
                   {currentUser.name}
                 </NavlinkStyled>

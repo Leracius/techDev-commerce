@@ -19,6 +19,7 @@ export const FormContainer = styled.form`
 
 export const InputContainer = styled.div`
     display: flex;
+    flex-direction: column;
     position: absolute;
     top: 40%;
     @media (max-width: 768px) {
@@ -35,7 +36,7 @@ export const InputStyled = styled.input`
     background-color: #0000003d;
     color: white;
     border: none;
-    padding: 0 5px 0 5px;
+    padding:10px;
     border-radius: 15px;
     border: 4px solid white;
     font-family: 'Space Grotesk', sans-serif;

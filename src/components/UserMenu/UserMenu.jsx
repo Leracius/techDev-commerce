@@ -24,7 +24,7 @@ const UserMenu = () => {
     }
 
   return (
-    <Container maxWidth sx={{width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+    <Container maxWidth sx={{ height: '70vh' ,width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
         <Typography variant='h2' sx={{color: "white", textAlign: 'center'}}>Bienvenido {currentUser.name}!</Typography>
         <Josh message={`Hola ${currentUser.name}!, ya pudiste ver algo de la tienda?`} active={true} displayTime={3000} /> 
         <Stack sx={{}}>

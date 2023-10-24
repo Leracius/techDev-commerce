@@ -47,13 +47,14 @@ const Finder = () => {
         </AnimatePresence>
         <InputContainer>
           <InputStyled
-            value={value} 
-            onChange={(e)=>setValue(e.target.value)}
-            type='text' placeholder='Busca por categoria'/>
+          value={value} 
+          onChange={(e)=>setValue(e.target.value)}
+          type='text' placeholder='Busca por categoria'/>
           <ButtonStyled type='submit' onClick={handleSubmit}>
-            <HiOutlineSearch  color="white" size={40}/>
+          <HiOutlineSearch  color="white" size={40}/>
           </ButtonStyled>
         </InputContainer>
+  
     </FormContainer>
   )
 }

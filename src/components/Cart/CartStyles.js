@@ -36,8 +36,10 @@ export const NavLinkStyled = styled(NavLink)`
 `
 
 export const CartBody = styled.div`
-    border: 3px solid white;
+    /* border: 3px solid white; */
     background-color: black;
+    border-radius: 20px;
+    margin: 20px;
     height: 90vh;
     position: absolute;
     bottom: -70px;
@@ -95,6 +97,7 @@ export const CartTitle = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 10px;
     align-items: center;
     color: white;
     @media (max-width: 768px) {

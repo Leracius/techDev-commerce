@@ -48,7 +48,12 @@ const Routes = () => {
                   <Route path=':user' element={<h1>holis</h1>} />
                   {/* <Route path=':user/orders' element={<Orders/>}/> */}
                 </Route>
-                <Route path='/orders' element={<Orders/>}/>
+                <Route path='/orders' element={
+                  <ProtectRoute redirectTo='/register'>
+                      <Orders/>
+                  </ProtectRoute>
+                }/>
+  
             </ReactDomRoutes>
 
         </Layout>

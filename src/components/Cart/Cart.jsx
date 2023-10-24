@@ -31,7 +31,7 @@ const Cart = () => {
 
 
   return (
-      <Cartcontainer style={currentStyle}>
+      <Cartcontainer>
         <div onClick={()=>dispatch(toggleHiddenCart())}>
         <QuantityElement>{totalCart}</QuantityElement>
         <HiShoppingBag color="white" size={40}/>
