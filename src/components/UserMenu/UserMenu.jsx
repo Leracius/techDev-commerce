@@ -14,36 +14,43 @@ import Josh from '../Josh/Josh';
 const UserMenu = () => {
     const dispatch = useDispatch()
     const {currentUser} = useSelector((state) => state.user);
+    const {cartItems} = useSelector(state => state.newData)
 
     const buttonStyle = {
       display: 'flex', 
       flexDirection: 'column', 
       justifyContent: 'center', 
       alignItems: 'center',
-      padding: '15px'
+      padding: '15px',
+      bgcolor: 'tomato' ,
     }
 
   return (
-    <Container maxWidth sx={{ height: '70vh' ,width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-        <Typography variant='h2' sx={{color: "white", textAlign: 'center'}}>Bienvenido {currentUser.name}!</Typography>
+    <Container maxWidth sx={{ 
+      height: '70vh' ,
+      width: '100vw', 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      flexDirection: 'column'}}>
         <Josh message={`Hola ${currentUser.name}!, ya pudiste ver algo de la tienda?`} active={true} displayTime={3000} /> 
-        <Stack sx={{}}>
-        <ButtonContainer style={{display: 'flex'}}>
-          
-          <button style={buttonStyle}>
+        <Stack sx={{bgcolor: 'black', p: '60px', borderRadius: '30px', textAlign:'center'}}>
+          <Typography variant='h6' sx={{color: '#1018aa'}}>Email: {currentUser.email}</Typography>
+          <Typography variant='h6' sx={{color: '#1018aa'}}>Tu nombre: {currentUser.name} {currentUser.surname}</Typography>
+        <Button style={buttonStyle}>
             <NavLinkStyled to={currentUser.name}
                 onClick={()=>{
                 console.log(currentUser.name)
                 }}>
                 usuario
             </NavLinkStyled>
-          </button>
-          <button  style={buttonStyle}>
+          </Button>
+          <Button  style={buttonStyle}>
             <NavLinkStyled to="/orders">
                 ver mis ordenes
             </NavLinkStyled>
-          </button>
-          <button  style={buttonStyle}>
+          </Button>
+          <Button  style={buttonStyle}>
             <NavLinkStyled to='/login'
                 onClick={()=>{
                   const result = confirm("Estas seguro?")
@@ -53,20 +60,11 @@ const UserMenu = () => {
                   }}}>
                 cerrar sesion
             </NavLinkStyled>
-          </button>
-        </ButtonContainer>
-
+          </Button>
         </Stack>
-
-
     </Container>
   )
 }
 
 export default UserMenu
 
-                // onClick={()=>{
-                //   const result = confirm("Estas seguro?")
-                //   if(result){
-                //     dispatch(clearCurrentUser())
-                //   }}} 

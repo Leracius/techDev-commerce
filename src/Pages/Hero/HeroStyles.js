@@ -7,6 +7,7 @@ export const HeroContainer = styled.div`
     flex-direction: column;
     width: 100%;
     justify-content: center;
+    align-items: center;
     margin-bottom: 40px;
     @media (max-width: 768px) {
       /* background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png'); */

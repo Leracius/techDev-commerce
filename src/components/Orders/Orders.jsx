@@ -28,7 +28,7 @@ const Orders = () => {
 
   return (
     <Container maxWidth sx={{width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-        <Typography variant='h3' sx={{color: "white", textAlign: 'center'}}>Órdenes de {currentUser.name}</Typography>
+        {/* <Typography variant='h3' sx={{color: "white", textAlign: 'center'}}>Órdenes de {currentUser.name}</Typography> */}
         <Stack>
           <OrderComponent/>
         </Stack>

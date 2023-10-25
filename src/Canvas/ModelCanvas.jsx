@@ -10,9 +10,9 @@ import { Stack } from '@mui/material'
 const Model = ({ path }) => {
     const model = useGLTF(path);
     return (
-      <mesh rotation={[0, Math.PI / 2, 0]}>
+      <mesh visible position={[0, 0, 0]}>
         <hemisphereLight intensity={2} skyColor="#ffffff" groundColor="#555555" />
-        <pointLight intensity={0.3}/>
+        <pointLight position={[10, 10, 10]} intensity={0.3}/>
         <primitive object={model.scene} scale={1} />
       </mesh>
     );
@@ -20,11 +20,10 @@ const Model = ({ path }) => {
   
 const ModelCanvas = ({ path }) => {
     return (
-      // <CanvasContainer>
       <Stack
-        direction="column"  // O "row" dependiendo de la disposición que necesites
-        alignItems="center"  // Otra propiedad que podría ser útil
-        justifyContent="center"  // Igual que alignItems, depende de tus necesidades
+        direction="column"  
+        alignItems="center"  
+        justifyContent="center"  
         sx={{ width: '100vw', height: '70vh' ,         
         '@media (max-width: 768px)': {
           height: '200px',
@@ -33,7 +32,7 @@ const ModelCanvas = ({ path }) => {
         <Canvas frameloop='demand' shadows camera={{ position: 15, fov: 1 }} gl={{ preserveDrawingBuffer: true }}>
           <Suspense fallback={<Loader />}>
             <OrbitControls
-              enableZoom={true}
+              // enableZoom={true}
               maxPolarAngle={Math.PI / 2}
               minPolarAngle={Math.PI / 2}
               autoRotate={true}

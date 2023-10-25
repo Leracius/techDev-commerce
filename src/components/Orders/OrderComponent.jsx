@@ -2,6 +2,7 @@ import { Card, Container, Typography } from '@mui/material'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import OrderCards from './OrderCards'
+import Loading from '../../Loader/LoaderStyled'
 
 const OrderComponent = () => {
 
@@ -23,8 +24,8 @@ const OrderComponent = () => {
             return <OrderCards {...order} key={order._id} />
           })
         ) : (
-            <Typography variant='h3' sx={{color: 'white'}}>No hay ordenes</Typography>
-        )
+            <Loading/>
+          )
       }
     </Container>
   )

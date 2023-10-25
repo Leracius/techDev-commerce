@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Typography } from '@mui/material'
+import { Card, CardContent, CardHeader, Stack, Typography } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FloatBtn } from '../../Pages/Product/ProductStyle'
@@ -16,13 +16,29 @@ const OrderCards = ({createdAt, _id, total}) => {
 
     const navigate = useNavigate()
 
+    const stackStyle = {
+      display: 'flex',
+      flexDirection: 'column',
+      bgcolor: 'black',
+      m: '20px',
+      p: '30px',
+      borderRadius: '20px'
+    }
+
+    const style = {
+      color: 'white',
+      borderRadius: '20px',
+      textAling: 'center',
+    }
+
   return (
-    <Card sx={{bgcolor: '#242424', m: '10px', color: 'white'}}>
+    <Stack sx={stackStyle}>
         <FloatBtn onClick={()=>navigate(-1)}><BsFillArrowLeftCircleFill size={30} color='white'/></FloatBtn>
-        <CardContent>Orden ID: #{_id.slice(0,8)}</CardContent>
-        <CardContent>Fecha de pedido: {formatDate(createdAt)}</CardContent>
-        <CardContent>Precio total: ${total}</CardContent>
-    </Card>
+        <Typography variant='h6' sx={style}>Orden ID: #{_id.slice(0,8)}</Typography>
+        <Typography variant='h6' sx={style}>Fecha de pedido: {formatDate(createdAt)}</Typography>
+        <Typography variant='h6' sx={style}>Precio total: ${total}</Typography>
+    </Stack>
+
   )
 }
 

@@ -9,6 +9,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { styles } from '../../colors/styleArray';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs'
 import Josh from '../../components/Josh/Josh';
+import { Button, Stack, Typography } from '@mui/material';
 
 const Layout = ({children}) => {
   const {currentUser} = useSelector((state) => state.user);
@@ -24,9 +25,12 @@ const Layout = ({children}) => {
     <ContainerStyled>
         <HeaderStyled>
             {/* <Alert sx={{position: 'fixed', left: '50%', transform: 'translate(-50%, -50%)', top: '40px'}} severity="error">This is an error alert — check it out!</Alert> */}
-            <ElemContainer>
+            {/* <ElemContainer>
               <img width='150px' src="https://res.cloudinary.com/dbo7lbynt/image/upload/v1689664836/assets-integrador/integrador-assets/logo-final_gh8mub.png" alt="" />
-            </ElemContainer>
+            </ElemContainer> */}
+          <Button>
+            <Typography variant='h6'>"techdev" E-COMMERCE</Typography>
+          </Button>
             <Cart/>
               
 
