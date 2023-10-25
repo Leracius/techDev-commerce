@@ -11,11 +11,7 @@ import { BsFillArrowUpRightCircleFill } from 'react-icons/bs'
 import Josh from '../../components/Josh/Josh';
 
 const Layout = ({children}) => {
-  const dispatch = useDispatch()
   const {currentUser} = useSelector((state) => state.user);
-  const currentStyleIndex = useSelector((state) => state.style);
-  // const currentStyle = styles[currentStyleIndex];
-
   const [active, setActive] = useState(true)
 
   const handleClick = (e) =>{

@@ -18,7 +18,7 @@ export const MenuBurguer = styled.div`
     border: 2px solid white;
     @media (max-width: 768px) {
         position: absolute;
-        background-color: gray;
+        background-color: black;
         top: 0;
         right: 0;
         width: 100%;

@@ -15,7 +15,7 @@ export const Cartcontainer = styled.div`
     z-index: 200;
     @media (max-width: 768px) {
       margin: 0;
-      border: none;
+      right: 0;
       bottom: 60px;
   }
     cursor: pointer;

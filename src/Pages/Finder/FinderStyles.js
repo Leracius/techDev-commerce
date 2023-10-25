@@ -8,7 +8,7 @@ export const FormContainer = styled.form`
     width: 100vw;
     height: 600px;
     @media (max-width: 768px) {
-      background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png');
+      /* background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png'); */
       height: 100vh;
       background-size: contain;
       background-repeat: no-repeat;
@@ -19,11 +19,11 @@ export const FormContainer = styled.form`
 
 export const InputContainer = styled.div`
     display: flex;
-    flex-direction: column;
     position: absolute;
     top: 40%;
     @media (max-width: 768px) {
       top: 90px;
+      
     }
     
     

@@ -14,9 +14,11 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    background: #0f0c29;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1698206961/assets-integrador/integrador-assets/herobg_staqlg.png');
+    /* background: #0f0c29; 
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); */
 
 }
 ` 
