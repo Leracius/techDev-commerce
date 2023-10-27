@@ -8,14 +8,11 @@ import { Button, Stack, Typography } from '@mui/material';
 
 const Hero = () => {
 
-  // const {currentUser} = useSelector(state=> state.user)
+  const {currentUser} = useSelector(state=> state.user)
   
 
   return (<>
       <HeroContainer>
-      {/* <Stack>
-        <Typography variant='h6' sx={{color: 'white'}}>{currentUser.name}</Typography>
-      </Stack> */}
       <Stack sx={{
           position: 'absolute', 
            zIndex: '10',
