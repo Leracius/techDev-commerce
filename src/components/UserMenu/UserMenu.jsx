@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { clearCurrentUser } from '../../redux/user/userSlice';
 import Container from '@mui/material/Container';
 import { NavLinkStyled } from '../Cart/CartStyles';
 import { NavLink } from "react-router-dom"
-import { Button, Card, Stack, Typography } from '@mui/material';
+import { Button, Card, Input, Stack, TextField, Typography } from '@mui/material';
 import { clearOrders } from '../../redux/orders/orderSlice';
 import { ButtonContainer } from '../Products/CardStyles';
 import { FaUserEdit } from 'react-icons/fa'
@@ -15,13 +15,15 @@ const UserMenu = () => {
     const dispatch = useDispatch()
     const {currentUser} = useSelector((state) => state.user);
     const {cartItems} = useSelector(state => state.newData)
+    const [active, setActive] = useState(false)
 
     const buttonStyle = {
       display: 'flex', 
       flexDirection: 'column', 
       justifyContent: 'center', 
       alignItems: 'center',
-      padding: '15px',
+      padding: '10px',
+      margin: '10px',
       bgcolor: 'tomato' ,
     }
 
@@ -34,17 +36,20 @@ const UserMenu = () => {
       alignItems: 'center', 
       flexDirection: 'column'}}>
         <Josh message={`Hola ${currentUser.name}!, ya pudiste ver algo de la tienda?`} active={true} displayTime={3000} /> 
-        <Stack sx={{bgcolor: 'black', p: '60px', borderRadius: '30px', textAlign:'center'}}>
-          <Typography variant='h6' sx={{color: '#1018aa'}}>Email: {currentUser.email}</Typography>
-          <Typography variant='h6' sx={{color: '#1018aa'}}>Tu nombre: {currentUser.name} {currentUser.surname}</Typography>
-        <Button style={buttonStyle}>
+        <Stack sx={{bgcolor: 'black', p: '40px', borderRadius: '30px', textAlign:'center',border: '2px solid #242424'}}>
+          <Stack sx={{border: '2px solid #242424', borderRadius: '10px', padding: '10px'}}>
+            <Typography variant='h6' sx={{color: 'white'}}>{currentUser.email}</Typography>
+            <Typography variant='h6' sx={{color: 'white'}}>{currentUser.name} {currentUser.surname}</Typography>
+          </Stack>
+
+        {/* <Button style={buttonStyle}>
             <NavLinkStyled to={currentUser.name}
                 onClick={()=>{
                 console.log(currentUser.name)
                 }}>
                 usuario
             </NavLinkStyled>
-          </Button>
+          </Button> */}
           <Button  style={buttonStyle}>
             <NavLinkStyled to="/orders">
                 ver mis ordenes
@@ -61,6 +66,20 @@ const UserMenu = () => {
                 cerrar sesion
             </NavLinkStyled>
           </Button>
+          <Button style={buttonStyle}>
+                <NavLinkStyled to='/create-product'>
+                  agregar producto
+                </NavLinkStyled>
+          </Button>
+          <Button variant='outlined' onClick={()=>{
+            setActive(!active)
+          }}>
+            soy admin
+          </Button>
+          {
+            active && <TextField label='admin key' variant="standard" sx={{m: '10px', color: 'white'}}/>
+          }
+          
         </Stack>
     </Container>
   )

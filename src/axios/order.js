@@ -36,3 +36,11 @@ export const createOrder = async(order, dispatch, currentUser) =>{
         dispatch(createOrderFail)
     }
 }
+
+export const getProducts = async(dispatch)=>{
+    try {
+        const response = axios.get(`${BASE_URL}/products`, )
+    } catch (error) {
+        
+    }
+}

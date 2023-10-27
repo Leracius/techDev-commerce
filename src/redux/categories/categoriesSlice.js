@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { products, categorias } from "../../data/data"
+import { products, categorias } from "../../data/data-axios"
 
 const INITIAL_STATE = {
     categories: categorias,

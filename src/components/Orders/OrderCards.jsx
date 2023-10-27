@@ -20,6 +20,7 @@ const OrderCards = ({createdAt, _id, total}) => {
       display: 'flex',
       flexDirection: 'column',
       bgcolor: 'black',
+      border: '2px solid #242424',
       m: '20px',
       p: '30px',
       borderRadius: '20px'

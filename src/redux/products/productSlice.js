@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { reducedProducts } from "../../data/data";
+import { reducedProducts } from "../../data/data-axios";
 
 const INITIAL_STATE = {
     products: reducedProducts,

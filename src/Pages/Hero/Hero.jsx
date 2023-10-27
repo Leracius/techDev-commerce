@@ -14,7 +14,7 @@ const Hero = () => {
   return (<>
       <HeroContainer>
       <Stack>
-        <Typography variant='h6' sx={{color: 'white'}}>{currentUser.name}</Typography>
+        {/* <Typography variant='h6' sx={{color: 'white'}}>{currentUser.name}</Typography> */}
       </Stack>
       <Stack sx={{
           position: 'absolute', 
