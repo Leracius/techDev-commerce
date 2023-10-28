@@ -35,12 +35,15 @@ const UserMenu = () => {
       justifyContent: 'center', 
       alignItems: 'center', 
       flexDirection: 'column'}}>
-        <Josh message={`Hola ${currentUser.name}!, ya pudiste ver algo de la tienda?`} active={true} displayTime={3000} /> 
+        <Josh message={`Hola ${currentUser?.name}!, ya pudiste ver algo de la tienda?`} active={true} displayTime={3000} /> 
         <Stack sx={{bgcolor: 'black', p: '40px', borderRadius: '30px', textAlign:'center',border: '2px solid #242424'}}>
-          <Stack sx={{border: '2px solid #242424', borderRadius: '10px', padding: '10px'}}>
-            <Typography variant='h6' sx={{color: 'white'}}>{currentUser.email}</Typography>
-            <Typography variant='h6' sx={{color: 'white'}}>{currentUser.name} {currentUser.surname}</Typography>
+          {
+            currentUser && <Stack sx={{border: '2px solid #242424', borderRadius: '10px', padding: '10px'}}>
+            <Typography variant='h6' sx={{color: 'white'}}>{currentUser?.email}</Typography>
+            <Typography variant='h6' sx={{color: 'white'}}>{currentUser?.name} {currentUser?.surname}</Typography>
           </Stack>
+          }
+
 
         {/* <Button style={buttonStyle}>
             <NavLinkStyled to={currentUser.name}
