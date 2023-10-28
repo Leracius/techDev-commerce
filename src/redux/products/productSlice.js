@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { reducedProducts } from "../../data/data-axios";
+import getProductsData from "../../data/data-axios";
+// import { reducedProducts } from "../../data/data-axios";
+
+const { reducedProducts } = await getProductsData();
 
 const INITIAL_STATE = {
     products: reducedProducts,

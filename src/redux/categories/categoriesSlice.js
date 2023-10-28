@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { products, categorias } from "../../data/data-axios"
+// import { products, categorias } from "../../data/data-axios"
+import getProductsData from "../../data/data-axios";
+
+const { products, categorias } = await getProductsData();
 
 const INITIAL_STATE = {
     categories: categorias,
