@@ -16,9 +16,9 @@ body {
     flex-direction: column;
     background-size: cover;
     background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1698206961/assets-integrador/integrador-assets/herobg_staqlg.png');
-    /* background: #0f0c29; 
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29); 
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); */
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
 
 }
 ` 

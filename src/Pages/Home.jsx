@@ -5,7 +5,7 @@ import Josh from '../components/Josh/Josh'
 
 const Home = () => {
   return (
-      <div style={{width: "100vw", minHeight: "80vh", backgroundColor: '#242424'}}>
+      <div style={{width: "100vw", minHeight: "80vh"}}>
         <Josh message="Fiuu! mira que bonitos productos" active={true} displayTime={3000} /> 
         <Categories></Categories>
         <CardProducts></CardProducts>

@@ -12,8 +12,6 @@ export const HeroContainer = styled.div`
     @media (max-width: 768px) {
       /* background-image: url('https://res.cloudinary.com/dbo7lbynt/image/upload/v1689910841/background-mobile-home_q8ta5d.png'); */
       height: 100vh;
-      padding-top: 30px;
-      justify-content: start;
       background-size: contain;
       background-repeat: no-repeat;
     }

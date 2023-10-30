@@ -14,7 +14,6 @@ import Josh from '../Josh/Josh';
 const UserMenu = () => {
     const dispatch = useDispatch()
     const {currentUser} = useSelector((state) => state.user);
-    const {cartItems} = useSelector(state => state.newData)
     const [active, setActive] = useState(false)
 
     const buttonStyle = {
@@ -43,16 +42,6 @@ const UserMenu = () => {
             <Typography variant='h6' sx={{color: 'white'}}>{currentUser?.name} {currentUser?.surname}</Typography>
           </Stack>
           }
-
-
-        {/* <Button style={buttonStyle}>
-            <NavLinkStyled to={currentUser.name}
-                onClick={()=>{
-                console.log(currentUser.name)
-                }}>
-                usuario
-            </NavLinkStyled>
-          </Button> */}
           <Button  style={buttonStyle}>
             <NavLinkStyled to="/orders">
                 ver mis ordenes
@@ -69,16 +58,16 @@ const UserMenu = () => {
                 cerrar sesion
             </NavLinkStyled>
           </Button>
-          <Button style={buttonStyle}>
+          {/* <Button style={buttonStyle}>
                 <NavLinkStyled to='/create-product'>
                   agregar producto
                 </NavLinkStyled>
-          </Button>
-          <Button variant='outlined' onClick={()=>{
+          </Button> */}
+          {/* <Button variant='outlined' onClick={()=>{
             setActive(!active)
           }}>
             soy admin
-          </Button>
+          </Button> */}
           {
             active && <TextField label='admin key' variant="standard" sx={{m: '10px', color: 'white'}}/>
           }

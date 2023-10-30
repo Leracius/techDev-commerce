@@ -10,12 +10,23 @@ const Hero = () => {
 
   const {currentUser} = useSelector(state=> state.user)
   
+  const logoStyle = {
+    color: 'white',
+    borderRadius: '20px',
+    bgcolor: 'black',
+    textAling: 'center',
+    padding: '30px',
+    border: '2px solid #242424'
+  }
 
   return (<>
       <HeroContainer>
       <Stack sx={{
           position: 'absolute', 
            zIndex: '10',
+           '@media (max-width: 768px)': {
+            top: '20%'
+           }
       }}>
         <AnimatePresence>
             <StyledMotionDiv
@@ -23,14 +34,8 @@ const Hero = () => {
                   y: [-10, 10, -10], 
                   transition: { duration: 3, repeat: Infinity, repeatType: 'reverse' } 
                   }}>
-                    <Typography variant='h3' sx={{
-                        color: 'white',
-                        borderRadius: '20px',
-                        bgcolor: '#00000374',
-                        textAling: 'center',
-                        padding: '30px',
-                        }}>
-                      techdev
+                    <Typography variant='h3' sx={logoStyle}>
+                      techdev.
                 </Typography>
             </StyledMotionDiv>
         </AnimatePresence>
