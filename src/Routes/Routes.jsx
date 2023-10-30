@@ -12,7 +12,7 @@ import Product from '../Pages/Product/Product';
 import {ProtectRoute , DisprotectRoute} from '../components/ProtectedRoute/ProtectRoute';
 import UserMenu from '../components/UserMenu/UserMenu';
 import Orders from '../components/Orders/Orders';
-import ProdForm from '../Pages/createProduct/prodForm';
+// import ProdForm from '../Pages/createProduct/prodForm';
 
 
 const Routes = () => {
