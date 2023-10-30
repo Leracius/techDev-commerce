@@ -1,25 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CardProduct from './CardProduct'
-import { ProductsContainer, TittleStyled } from './CardStyles'
-import { useSelector } from 'react-redux'
-import { selectCategory } from '../../redux/categories/categoriesSlice';
+import { ProductsContainer } from './CardStyles'
+import { useDispatch, useSelector } from 'react-redux'
 import getProductsData from '../../data/data-axios';
+import { setProducts } from '../../redux/products/productSlice';
 
 const CardProducts = () => {
-  let products = useSelector(state=> state.products.products)
-  const selectedCategory = useSelector(state=> state.categories.selectedCategory)
+  const {products} = useSelector(state=> state.products)
+  let filtreds = products.reducedProducts
+  const {selectedCategory} = useSelector(state=> state.categories)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const prod = await getProductsData();
+      dispatch(setProducts(prod))
+    };
+  
+    fetchData();
+  }, []);
 
   if(selectedCategory) {
-    products = {
-      [selectedCategory]: products[selectedCategory]
+    filtreds = {
+      [selectedCategory]: filtreds[selectedCategory]
     }
   }
 
   return (
-    // <><TittleStyled>Hecha un vistazo!</TittleStyled>
       <ProductsContainer>
         {
-          products && Object.entries(products).map(([,productEl])=>{
+          filtreds && Object.entries(filtreds).map(([,productEl])=>{
             return productEl.map((el)=>{
               return <CardProduct {...el} key={el.id} />
             })

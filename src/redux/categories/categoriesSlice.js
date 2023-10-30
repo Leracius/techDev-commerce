@@ -1,37 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 // import { products, categorias } from "../../data/data-axios"
-import getProductsData from "../../data/data-axios";
-
-const { products, categorias } = await getProductsData();
 
 const INITIAL_STATE = {
-    categories: categorias,
+    categories: [],
     selectedCategory: null
 }
 
-const INITIAL_STATE_PROD = {
-    prodcutos: products,
-    selectedProduct: null
-}
-
-export const productSlice = createSlice({
-    name: "productos",
-    initialState: INITIAL_STATE_PROD,
-    reducers: {
-        getProduct: (state) => {
-            return state
-        },
-        productCategory: (state, action) => {
-            return {
-                ...state,
-                selectedCategory: action.payload
-            }
-        }
-    }
-})
-
 export const categorieSlice = createSlice({
-    name: "categorias",
+    name: "categories",
     initialState: INITIAL_STATE,
     reducers: {
         getCategories: (state) => {
@@ -43,9 +19,17 @@ export const categorieSlice = createSlice({
                 selectedCategory:
                 action.payload !==state.selectedCategory ? action.payload : null
             }
+        },
+        setCategories: (state, action) => {
+            return {
+              ...state,
+              loading: false,
+              error: null,
+              categories: action.payload,
+            };
         }
     }
 })
 
-export const { getCategories, selectCategory } = categorieSlice.actions
+export const { getCategories, selectCategory, setCategories } = categorieSlice.actions
 export default categorieSlice.reducer

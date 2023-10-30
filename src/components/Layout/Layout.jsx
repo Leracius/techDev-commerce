@@ -14,6 +14,7 @@ import { Button, Stack, Typography } from '@mui/material';
 const Layout = ({children}) => {
   const {currentUser} = useSelector((state) => state.user);
   const [active, setActive] = useState(true)
+  
 
   const handleClick = (e) =>{
     e.preventDefault()

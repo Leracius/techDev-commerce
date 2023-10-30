@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import getProductsData from "../../data/data-axios";
-// import { reducedProducts } from "../../data/data-axios";
-
-const { reducedProducts } = await getProductsData();
 
 const INITIAL_STATE = {
-    products: reducedProducts,
+    products: [],
 }
 
 export const productSlice = createSlice({
@@ -14,10 +10,18 @@ export const productSlice = createSlice({
     reducers: {
         getProducts: state => {
             return state
+        },
+        setProducts: (state, action) => {
+            return {
+              ...state,
+              loading: false,
+              error: null,
+              products: action.payload,
+            };
         }
     }
 })
 
-export const {getProducts} = productSlice.actions
+export const {getProducts, setProducts} = productSlice.actions
 
 export default productSlice.reducer
