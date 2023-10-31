@@ -12,6 +12,7 @@ import Product from '../Pages/Product/Product';
 import {ProtectRoute , DisprotectRoute} from '../components/ProtectedRoute/ProtectRoute';
 import UserMenu from '../components/UserMenu/UserMenu';
 import Orders from '../components/Orders/Orders';
+import VerifyUser from '../Pages/Verify/VerifyUser';
 // import ProdForm from '../Pages/createProduct/prodForm';
 
 
@@ -46,8 +47,7 @@ const Routes = () => {
                 <Route path='/register' element={<Register/>} />
                 <Route path='/user'>
                   <Route index element={<UserMenu/>} />
-                  <Route path=':user' element={<h1>holis</h1>} />
-                  {/* <Route path=':user/orders' element={<Orders/>}/> */}
+                  <Route path=':user' element={<VerifyUser/>} />
                 </Route>
                 {/* <Route path='/create-product' element={
                   <ProtectRoute redirectTo='/register'>

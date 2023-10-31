@@ -5,27 +5,26 @@ import OrderCards from './OrderCards'
 import Loading from '../../Loader/LoaderStyled'
 
 const OrderComponent = () => {
-
-    const {orders, loading, error} = useSelector(state=> state.orders)
-
-    if(loading && !orders){
-        return <Typography>Cargando ordenes...</Typography>
-    }
-
-    if(error){
-        return <Typography>{error}</Typography>
-    }
+  const { orders, loading, error } = useSelector(state => state.orders)
 
   return (
     <Container>
       {
-        orders?.length ? (
-          orders.map((order) => {
-            return <OrderCards {...order} key={order._id} />
-          })
+        loading && !orders ? (
+          <Loading />
+        ) : error ? (
+          <Typography>{error}</Typography>
+        ) : orders?.length ? (
+          orders.map((order) => <OrderCards {...order} key={order._id} />)
         ) : (
-            <Loading/>
-          )
+          <Typography variant='h4' sx={{
+            color : 'white', 
+            bgcolor: 'black', 
+            marginTop: '30px', 
+            borderRadius: '15px',
+            border: '2px solid #242424',
+            p : '20px',}}>No hay ordenes</Typography>
+        )
       }
     </Container>
   )

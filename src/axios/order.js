@@ -32,8 +32,8 @@ export const createOrder = async(order, dispatch, currentUser) =>{
             getOrders(dispatch, currentUser)
         }
     } catch (error) {
-        console.log(error)
-        dispatch(createOrderFail)
+        // console.log(error)
+        dispatch(createOrderFail(error))
     }
 }
 

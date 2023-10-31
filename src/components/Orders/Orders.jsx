@@ -5,7 +5,6 @@ import { Typography, Stack } from '@mui/material';
 import { getOrders } from '../../axios/order';
 import { clearError, fetchOrdersFail } from '../../redux/orders/orderSlice';
 import OrderComponent from './OrderComponent';
-import OrderCards from './OrderCards';
 
 
 const Orders = () => {
@@ -16,7 +15,6 @@ const Orders = () => {
     useEffect(()=>{
       if(!orders){
         getOrders(dispatch, currentUser)
-        console.log(orders);
       }
       console.log(orders);
       if(currentUser){

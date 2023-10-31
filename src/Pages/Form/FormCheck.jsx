@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import { Container } from './FormStyles';
 import { checkoutInitialValues } from '../../Formik/initialValues';
@@ -8,14 +8,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createOrder } from '../../axios/order';
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../redux/selected/DataSlice';
+import Josh from '../../components/Josh/Josh';
+import { clearError } from '../../redux/orders/orderSlice';
 
 const FormCheck = () => {
 
   const {cartItems, shippingCost} = useSelector(state => state.newData)
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
   const dispatch = useDispatch()
-  const {currentUser} = useSelector((state) => state.user);
+  const {currentUser} = useSelector((state) => state.user)
   const navigate = useNavigate()
+
+  const [active, setActive] = useState(false)
+  const [msg, setMsg] = useState("")
+
+  const setJosh= (joshSay) => {
+    setActive(true);
+    setMsg(joshSay)
+
+    setTimeout(() => {
+      setActive(false);
+      navigate('/buy')
+    }, 3000);
+  };
 
   const formik = useFormik({
     initialValues: checkoutInitialValues,
@@ -32,22 +47,28 @@ const FormCheck = () => {
       }
 
       try {
-        await createOrder(orderData, dispatch, currentUser);
-        navigate("/home")
-        dispatch(clearCart())
+        if (currentUser.verified && cartItems && cartItems.length > 0){
+          await createOrder(orderData, dispatch, currentUser);
+          dispatch(clearCart())
+          setJosh("Órden enviada!")
+        }
+        else if(!currentUser.verified){
+          return setJosh("No estas verificado")
+        }if(cartItems.length <= 0){
+          return setJosh("No se puede enviar una orden vacía")
+        }
       } catch (error) {
-        alert("Error al enviar la orden")
+        alert("Algo malio sal")
       }
-      console.log(orderData);
       formik.resetForm();
     },
   });
 
   return (
     <Container>
-        
+        { active && <Josh message={msg} active={true} displayTime={3000}/>}
         <form onSubmit={formik.handleSubmit}>
-        <p>Inrega tus datos</p>
+        <p>Ingresa tus datos</p>
         <div>
           <InputStyled
             type="text"

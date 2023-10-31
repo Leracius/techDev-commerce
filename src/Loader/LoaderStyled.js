@@ -6,6 +6,7 @@ export const Loading = styled.div`
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  margin-top: 40px;
   animation: spin 1s linear infinite;
   margin: 0 auto;
 

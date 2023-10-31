@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { clearCurrentUser } from '../../redux/user/userSlice';
+import { clearCurrentUser, clearVerify } from '../../redux/user/userSlice';
 import Container from '@mui/material/Container';
 import { NavLinkStyled } from '../Cart/CartStyles';
 import { NavLink } from "react-router-dom"
@@ -9,11 +9,12 @@ import { clearOrders } from '../../redux/orders/orderSlice';
 import { ButtonContainer } from '../Products/CardStyles';
 import { FaUserEdit } from 'react-icons/fa'
 import Josh from '../Josh/Josh';
+import { postVerify } from '../../axios/verify';
 
 
 const UserMenu = () => {
     const dispatch = useDispatch()
-    const {currentUser} = useSelector((state) => state.user);
+    const {currentUser, isVerify} = useSelector((state) => state.user);
     const [active, setActive] = useState(false)
 
     const buttonStyle = {
@@ -54,25 +55,20 @@ const UserMenu = () => {
                   if(result){
                     dispatch(clearCurrentUser())
                     dispatch(clearOrders())
+                    dispatch(clearVerify())
                   }}}>
                 cerrar sesion
             </NavLinkStyled>
           </Button>
-          {/* <Button style={buttonStyle}>
-                <NavLinkStyled to='/create-product'>
-                  agregar producto
-                </NavLinkStyled>
-          </Button> */}
-          {/* <Button variant='outlined' onClick={()=>{
-            setActive(!active)
-          }}>
-            soy admin
-          </Button> */}
           {
-            active && <TextField label='admin key' variant="standard" sx={{m: '10px', color: 'white'}}/>
+            !isVerify && <Button  style={buttonStyle}>
+            <NavLinkStyled to={currentUser.name}>
+                Verificarme
+            </NavLinkStyled>
+          </Button>
           }
-          
         </Stack>
+
     </Container>
   )
 }
