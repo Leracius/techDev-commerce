@@ -22,7 +22,7 @@ const VerifyUser = () => {
       setValue('');
     };
 
-    if(isVerify){
+    if(isVerify || currentUser.verified){
         navigate('/home')
     }
 

@@ -61,7 +61,7 @@ const UserMenu = () => {
             </NavLinkStyled>
           </Button>
           {
-            !isVerify && <Button  style={buttonStyle}>
+            !isVerify || currentUser.verified && <Button  style={buttonStyle}>
             <NavLinkStyled to={currentUser.name}>
                 Verificarme
             </NavLinkStyled>
